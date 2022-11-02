@@ -1,0 +1,92 @@
+¿Que es Ingeniería Social?
+Técnica utilizada para obtener información confidencial a través del engaño de usuarios con privilegio.
+Objetivos principales:
+Fraude,
+Robo de información,
+Robo bancario,
+Acceso a sistemas privados de información.
+
+Principios de la inenieria social
+Todos queremos ayudar,
+
+Nuestra primera acción siempre es de confianza,
+
+No nos gusta decir que NO,
+
+A todos nos gusta la alabanza.
+
+Tecnicas:
+Técnicas pasivas:
+Se vigila al usuario y se obtiene información basada en su comportamiento, NO se interactúa con él.
+También conocida como “Surf Shoulder”.
+Técnicas NO presenciales:
+Se contacta al usuario a través de algún medio (mail, teléfono) y se le engaña para obtener información.
+Técnicas presenciales:
+Se obtiene información invadiendo la privacidad del usuario, a través de documentación o espionaje.
+
+Tecnicas mas comunes
+Phishing:
+Pagina web falsa para obtener credenciales de acceso,
+Afecta principalmente a bancos e instituciones financieras.
+Engaño telefónico:
+A través de preguntas en una conversación telefónica, se consigue información confidencial del usuario.
+Aplicaciones maliciosas:
+Se recibe una aplicación a través de correo electrónico y se le pide al usuario ejecutarla o ver el video.
+Navegación engañosa:
+En alguna página de Internet, aparece un “pop-up” solicitando acceder a algún sitio, típicamente una aplicación maliciosa se instala en el equipo.
+Acceso remoto:
+Se instala un agente en el equipo que permite tomar control remoto.
+Acceso directo:
+Se instala algún hardware, típicamente para leer teclado.
+Intercepción de comunicación
+ A través de software espía se revisa el trafico de red.
+
+
+Buenas practicas:
+No confiar en toda la información que se recibe,
+Validar la fuente,
+Herramientas de seguridad,
+IE11,
+Preguntar antes de actuar,
+Solicitud de información confidencial,
+Respuesta a cuestionarios,
+NO TODO LO QUE BRILLA ES ORO !!!!.
+
+Herramientas de deteccion:
+Netcraft provee varios servicios de apoyo en la detección y eliminación de phishing.
+
+Principales Conclusiones:
+La ingeniera social existirá siempre y cuando existan usuarios con la suficiente ingenuidad.
+
+Es un tema que atraviesa en forma transversal a la sociedad.
+
+Muy difícil de atacar, pues tiene que ver con el comportamiento de las personas.
+
+
+Ingeniería Social:
+Técnica utilizada para obtener información confidencial a base de engaños.
+Objetivos:
+Fraude y robo de información.
+Técnicas de Ingeniería Social:
+Pasivas,
+No presenciales,
+Presenciales.
+
+Fuentes mas comunes de ataques de Ingeniería Social:
+Correo electrónico Phishing,
+Redes sociales (Facebook),
+Dispositivos móviles.
+Protección contra Ingeniería Social:
+Buenas practicas.
+Caso SOBER
+Gusano con la mayor propagación que se tenga registro de Ingeniería Social.
+
+Preguntas:
+¿Cuál de los siguientes controles evitaría un ataque de Ingeniería Social?
+Respuesta: Ninguna de las anteriores.
+
+El éxito del caso SOBER radica, principalmente, en:
+Respuesta: La curiosidad de los usuarios.
+
+El Phishing es una técnica de Ingeniería Social que corresponde a:
+Respuesta: Técnica NO presencial.

@@ -1,0 +1,76 @@
+Componentes del Sistema Operativo:
+Kernel: es el componente mas importante del Sistema operativo y se encarga de proveer la interfaz entre el hardware y las aplicaciones.
+
+Sus principales funciones son:
+Ejecución de procesos,
+Carga de programas,
+Interfaz entrada/salida (periféricos),
+Supervisión de transmisión de datos.
+
+Tipos de kernel:
+Monolíticos,
+Microkernel.
+
+Sistema de archivos: realiza la asignación de espacio y acceso a los archivos del Sistema Operativo bajo un esquema de permisos.
+Permisos en el Sistema Operativo: son los que regulan las acciones posibles de ejecutar en los archivos, éstas pueden ser:
+Lectura,
+Escritura,
+Ejecución,
+Permisos en Linux: están categorizados en propietario (owner), grupo y Sistema Operativo.
+
+
+Sistema de archivos NTFS: controla los permisos de los archivos según los siguientes atributos:
+Lectura,
+Escritura,
+Lectura y ejecución,
+Modificación,
+Control total,
+Los permisos en NTFS son controlados por el dueño del archivo (owner) y son manejados directamente desde la interfaz del Sistema Operativo.
+
+Procesos: corresponden a las tareas que ejecuta el sistema operativo que se alojan en memoria y utiliza los recursos de hardware.
+
+Sistemas Operativos Virtuales: son aquellos que permiten ejecutar múltiples sistemas operativos en un mismo hardware. Esta solución permite optimizar los recursos además de implementar servidores solo vía configuración de software.
+La mayoría de estas soluciones permiten asignar parte de los recursos de hardware a cada uno de los sistemas operativos “huésped” a discreción.
+Las soluciones mas utilizadas son:
+VMWare,
+Xen,
+Citrix,
+Microsoft.
+
+Principales amenazas al Sistema Operativo:
+Desbordamiento de búfer (Buffer Overflow): ocurre cuando se excede la capacidad de memoria reservada para una variable y el sistema no tiene control sobre dicha variable. La principal consecuencia es la caída del sistema.
+
+Puerta trasera (Backdoor): programa que se instala en el Sistema Operativo, sin el consentimiento del usuario, que al ejecutarse levanta un servicio a través del cual el atacante puede tomar control remoto del servidor
+
+Ataques al Sistema Operativo:
+Hoy existen dos tipos de ataques de los cuales un S. O. puede ser víctima.
+Ataque de servicio: consiste en explotar algún servicio vulnerable del sistema operativo y a través de él acceder al servidor o tomar control de este.
+Ataque de cliente: consiste en que el cliente se infecta con algún archivo o aplicación ejecutado en el servidor que aprovecha alguna vulnerabilidad en el sistema operativo de la víctima.
+
+Código Malicioso:
+Definicion: software, aplicación o programa que se ejecuta sin consentimiento del usuario y que causa algún tipo de daño.
+En el idioma ingles se conoce como “malware” que es una abreviación de “Malicious software”.
+
+Malware: software malicioso que ataca un Sistema Operativo para causar algún daño, sus principales variantes son:
+Virus: tiene la capacidad de auto-reproducirse a través de diferentes medios, afectan a archivos o aplicaciones.
+Gusanos: se propagan a través de la red y causan daño fundamentalmente por exceso de trafico. De este tipo han sido los daños mas importantes.
+Troyano: utiliza un programa licito para transportarse, no tiene la capacidad de auto-reproducirse.
+Rootkit: infecta al sistema reemplazando una porción del programa para ejecutar comandos de S. O.
+Adware: infecta a su victima a través de publicidad no deseada, típicamente como pop-up de algún servicio de navegación.
+Dialer: al infectar a su victima inicia conexiones hacia Internet para bajar archivos o enviar información.
+Spyware: tiene la capacidad de leer teclado o robar información y luego enviarla al atacante a través de Internet.
+
+Tipos de Infecciones:
+A través de dispositivos removibles, tales como disqueteras, CD, pendrives, etc.
+A través de macros de Office de Microsoft.
+A través de correo electrónico, tanto en los adjuntos como en el mensaje.
+A través de la red, se propagan en el trafico de redes locales o Internet.
+A través de aplicaciones web, infecta al usuario que se conecta al sitio.
+A través de “Botnets”, utilizando una computadora infectada como Zombie para infectar a otras.
+
+Preguntas:
+¿Si usted recibe una llamada de que existe una vulnerabilidad en un servidor en el puerto 1234. ¿A que tipo de malware se refiere?.
+Respuesta:Backdoor.
+
+¿El sistema operativo más vulnerable es el más?:
+Respuesta: Utilizado

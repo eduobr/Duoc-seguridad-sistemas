@@ -1,0 +1,140 @@
+Controles de Seguridad:
+
+Se entiende por cualquier mecanismo o acción que ayude a resguardar los atributos de la Información.
+
+Se entiende que la información esta bajo “amenazas” que pueden afectar sus atributos, en función de su “criticidad” se decide o no la aplicación de controles
+
+Existen 3 Tipos de controles: Administrativos, Técnicos, Fisicos.
+
+Administrativos
+Están involucrados con procedimientos, políticas o entrenamiento, no involucran tecnología.
+Ejemplo: política de seguridad.
+
+Técnicos:
+Son aquellos que involucran tecnología para cumplir su función, ya sea de control de acceso o protección de la información.
+Ejemplo: autenticación, cifrado.
+
+Físicos:
+Son aquellos que controlan el acceso físico de usuarios a la información.
+Ejemplo: cámaras de vigilancia, bóvedas de seguridad.
+
+Los principales controles de Seguridad para redes existentes en la actualidad son:
+Firewalls: permiten filtrar paquetes IP por dirección o puerto, se utiliza principalmente para controlar los accesos a las redes.
+IDS: permiten monitorear el tráfico anómalo en una red LAN o a un host específico (HIDS).
+IPS: permiten bloquear tráfico anómalo en uno o varios segmentos de redes LAN.
+ACL: permite controlar el acceso de redes en función de los parámetros de cabecera IP.
+NAC: controla el acceso a la red a nivel de L2 y genera zonas de cuarentena.
+VPN: permite cifrar el tráfico de información confidencial.
+
+¿Qué es un Firewall o Cortafuego?
+Definición:
+Dispositivos de comunicaciones que permite o no la conexión de red a través de el,
+Funcionan como dispositivos de control de seguridad al restringir el acceso a redes,
+Su configuración se basa en “reglas” de acceso de TCP/IP y acciones de permitir o no el trafico,
+Hoy en día tienen funciones adicionales por razones comerciales.
+
+Tipos de firewall: dependiendo de cual es su capa de aplicación y sus capacidades, existen en la actualidad tres tipos de firewall:
+Filtro de paquetes: este tipo de firewall solo tiene la capacidad de filtrar paquetes IP por puerto o dirección y no tiene la capacidad de mantener el estado de una sesión.
+Firewall stateful inspection: también tiene la capacidad de filtrar por direcciones IP y puertos y además tiene la capacidad de mantener el estado de las sesiones, evitando así ataques de spoofing. (SPF+AIC).
+Firewall proxy: este tipo de firewall intercepta las sesiones entre cliente y servidor, una vez terminado el “handshake” permite la conexión hacia el servidor.
+
+Funciones Adicionales:
+Cifrado,
+Detección de Intrusos,
+AntiSpam,
+Anti-relay,
+Traslación de direcciones (NAT),
+Antivirus de red,
+Etc.
+
+Beneficios de un firewall:
+Control de acceso entre redes, a través del filtrado de paquetes,
+Punto de control para intento de accesos no autorizados,
+Permite reducir el numero de direcciones IP publicas necesarias,
+Permite medir el uso del trafico hacia Internet.
+
+El filtrado de paquetes Examina la cabecera del paquete IP para tomar una acción.
+
+Estructura de un paquete IP:
+header, dirección ip origen, dirección ip destino, puerto, data.
+
+Estructura de una politica de filtrado:
+ Politíca, dirección ip origen, dirección ip destino, puerto, Acción
+
+Las acciones posibles son:
+ Accept (permite la conexión)
+ Reject (no permite la conexión sin avisar)
+ Drop (no permite la conexión)
+.
+Las políticas se pueden encadenar, Se ejecutan en forma secuencial, Deben ir de la mas restrictiva a las mas general.
+
+Las IPTables:
+
+Solución de seguridad firewall de estado, que permite filtrar el trafico hacia y desde un servidor
+Esta incorporado en todas las distribuciones Linux y tiene licencia GNU
+Se configuran sus reglas en base a cadenas pre-definidas:
+Para filtrado de paquetes IP:
+FORWARD,
+INPUT,
+OUTPUT.
+
+Para NAT:
+POSTROUTING,
+PREROUTING.
+
+Preguntas:
+¿Cuál de las siguientes características corresponde a un firewall de estado (stateful)?
+Respuesta: Permite el trafico de retorno, solo si existe una sesión iniciada.
+
+¿Cuál de las siguientes características corresponde a una solución UTM?
+Respuesta: Antivirus de red.
+
+¿De que forma se ejecutan las reglas de un firewall?
+Respuesta: Secuencial.
+
+¿Para que un Firewall Next Generation pueda revisar el contenido de Facebook debe operar en la capa de?:
+Respuesta: Aplicación.
+
+Mis Apuntes:
+DMZ:aloja servidores que pueden ser accedidos desde la red publica
+
+permisivo:acepta todo el trafico a excepcion de lo que deniegue implisitamente.
+
+retrictivo:deniega todo el trafico a excepcion de lo que acepte.
+
+Tipos de firewall:
+filtro paquetes:ip y puerto, pero no tiene tabla de estado.
+firewall stateful inspection:ip,puerto, tabla de estado
+                             spf+aic trabaja en la capa 3 y 4(ip,puerto),
+                             crea tabla de estado.
+firewall proxy.
+
+proxy: es un servidor
+
+Translación de direcciones(NAT):se usa cúando el cliente quiere salir.
+
+
+Acciones de una iptable
+DROP(envia un mensaje de aviso).
+
+Reject(no envia mensaje de aviso).
+
+Accept(acepta todo).
+
+Ip Tables:solución de seguridad firewall de estado, cortafuegos del kernel del linux
+         corre en cualquier distribución de linux.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

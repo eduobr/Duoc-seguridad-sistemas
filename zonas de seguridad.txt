@@ -1,0 +1,137 @@
+Zonas de Seguridad: dentro de la configuración de un firewall se definen zonas, en consecuencia con la arquitectura de segmentación definida, de tal forma que:
+Sólo se permite a determinadas zonas, sólo el tráfico autorizado.
+En caso de un incidente de seguridad, éste queda circunscrito a una zona aislada y no afecta al resto de la red.
+Las zonas de seguridad se pueden definir con redes L3 o VLAN.
+Un firewall NO tiene la capacidad de controlar el tráfico dentro de una zona.
+
+DMZ: también llamada zona “des-militarizada” es una zona de seguridad que se crea en el contexto de arquitectura de redes con firewall, cuyo propósito principal es publicar servicios hacia redes “no” confiables.
+La principal regla de seguridad de una red DMZ es que el trafico hacia ella esta permitido, pero el trafico desde la red DMZ esta restringido. El objetivo de esta política es que si se llega a comprometer esta red, este a salvo el resto de la red privada.
+Se deben aplicar medidas especiales de seguridad a los servidores que forman parte de esta red.
+
+Es una red de seguridad intermedia
+Solo el trafico hacia la red interna, esta permitido a través de ella.
+Es una red en la cual se publican servicios, por ejemplo:
+DNS,
+Servicios Web,
+Gateway de correo electrónico,
+Etc.
+
+Los servicios que típicamente se instalan en una red DMZ son:
+Servidores web,
+Gateway de correo electrónico,
+DNS,
+Servidor FTP,
+Servidor de Directorio publico,
+Correo Web.
+
+
+Benficios:
+NO hay trafico directo de Internet hacia la red interna.
+Es posible aplicar políticas de seguridad especificas de correo electrónico en el GW, por ejemplo:
+AntiSpam,
+Anti-relay,
+Antivirus.
+
+El trafico de correo de salida sigue la misma trayectoria.
+También se puede aplicar seguridad al trafico de salida, por ejemplo:
+Filtro de contenido,
+Prevención de fuga de información.
+
+Servidor web público.
+1.- Trafico web desde Internet
+2.- Trafico de consulta hacia la red interna
+
+NO hay trafico directo desde Internet hacia la red interna.
+La información de la red interna (bases de datos), esta protegida.
+Es posible aplicar políticas de seguridad en la red DMZ, por ejemplo:
+Web Application Firewall(WAF).
+
+Se pueden aplicar políticas de seguridad especificas de aplicaciones web.
+Por ejemplo:
+Control de acceso de usuarios,
+Ataques específicos de aplicaciones web,
+Cifrado SSL,
+Balanceo de carga,
+Etc.
+
+DNS:
+Servicio de nombres de Internet (Domain Name Services).
+
+Beneficios:
+No se realizan consultas a la red interna,
+Se puede mantener separado el DNS interno, del externo,
+En caso de falla o hacking del servidor DNS, los servicios internos no se verán afectados.
+
+Control de seguridad para redes:
+Traslación de direcciones (NAT):
+Es un mecanismo utilizado para interconectar redes cuya numeración IP es incompatible, transformando la cabecera IP en tiempo real y realizando el proceso inverso
+Este proceso esta normalizado a través de la RFC 2663
+Existen dos tipos de NAT:
+Estático: donde el cambio se realiza de una dirección IP a otra.
+Dinámico: donde el cambio se realiza desde un grupo de direcciones IP o red a una sola, también se conoce como PAT (Port Address Traslation).
+
+IDS (Intrusion Detection System): permite detectar tráfico malicioso a nivel de red en base a patrones pre-definidos, conocidos como “firmas”.
+Es un control de seguridad reactivo, pues no tiene la capacidad de prevenir un ataque, sólo de alertarlo.
+Se instala en la red que se desea proteger en modalidad “sniffer”, refleja el tráfico en su interfaz de monitoreo y cuando detecta tráfico que coincide con un patrón, envía una alerta.
+Tampoco tiene la capacidad de detectar anomalías en tráfico cifrado.
+
+Operaciones de un IDS:
+1.- el atacante envía el tráfico malicioso a través de la red
+2.- dado que el IDS tiene su interfaz de monitoreo conectada al switch por donde pasa el tráfico en modo SPAN, es capaz de detectar el trafico malicioso
+3.- el IDS compara el tráfico capturado con los patrones de firma que tiene configurados y si coinciden, envía una alerta
+4.- además puede configurar una regla en el firewall para detener el tráfico malicioso.
+
+Terminología de IDS: dependiendo el resultado del análisis de las alertas generadas por los IDS tenemos los siguientes escenarios.
+Alerta: se gatilla cuando un patrón de tráfico coincide con una firma configurada, generalmente se envían por mail o se graban en  un registro.
+Falso positivo: un patrón de tráfico que gatilla una alerta sin ser un ataque real.
+Falso negativo: un patrón de tráfico que es un ataque real y que no gatilla una alerta.
+FAR (False Alarm Rate): es la razón entre falso positivos y las alertas detectadas.
+
+IDS SNORT: es la herramienta de IDS más utilizada en la actualidad, es de código abierto, actualmente desarrollado por la empresa Sourcefire (CISCO),
+Está disponible para plataformas Linux y Windows,
+También permite personalizar sus firmas de acuerdo a los requerimientos particulares de un usuario.
+
+Reglas de SNORT: se utiliza un lenguaje tipo “script” para configurar las reglas de SNORT, los archivos de reglas están en texto plano.
+Cada regla esta dividida en dos secciones:
+Cabecera: indica el protocolo, la acción y las direcciones IP y puertos origen y destino.
+Cuerpo: se escribe entre paréntesis e indica los parámetros específicos del patrón de seguridad.
+
+IPS (Intrusion Prevention System): control de seguridad que monitorea el tráfico en línea y permite detectar anomalías de tráfico en base a patrones y comportamiento.
+La principal diferencia con un IPS es que tiene la capacidad de bloquear un ataque, además de detectarlo y registrarlo.
+Los principales métodos de detección que existen en los IPS comerciales en la actualidad son:
+Basados en firmas,
+Basados en tráfico,
+Basados en comportamiento.
+
+Preguntas:
+¿Cuál de los siguientes servicios NO debería estar instalado en una red DMZ?
+Respuesta: Base de Datos.
+
+¿Cuál es el parámetro que cambia en un paquete IP en una operación de NAT dinámico o PAT?
+Respuesta: Puerto de servicio origen.
+
+¿La principal diferencia entre un IDS y un IPS es:?
+Respuesta: IPS bloquea el tráfico malicioso mientras que el IDS sólo alerta.
+
+Mis Apuntes:
+
+DMZ:aloja servidores que pueden ser accedidos desde la red publica.
+
+Translación de direcciones(NAT):se usa cúando el cliente quiere salir.
+
+Redes DMZ
+Definicion:  zona de seguridad intermedia, a la cual solo se puede acceder a través de un firewall.
+
+
+Utilidad de una red DMZ:
+Publicar servicios accesibles desde Internet
+Ejemplo:
+DNS,
+Web,
+Gateway de correo,
+Etc.
+
+NAT:
+Tipos de NAT:
+Estático,
+Dinámico.

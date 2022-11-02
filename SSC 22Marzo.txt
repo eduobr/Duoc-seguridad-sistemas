@@ -1,0 +1,12 @@
+IDS: Sistema de deteccion de intrusos
+IPS: 
+ACL: Access control list
+NAC: 
+VPN:
+ 
+DMZ: Zona desmilitarizada
+SPF: Statefull package filter
+AIC: Application inspection control
+UTM: Administracion de Amenazas unificado
+
+Estado de conexiones: netstat -A

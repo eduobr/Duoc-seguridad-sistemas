@@ -1,0 +1,109 @@
+Secure Socket Layer (SSL)
+Esquema de seguridad para aplicaciones que opera entre la capa de trasporte TCP y la capa de aplicación, también se le denomina TLS (Transport Layer Security) para las conexiones web Internet.
+Desarrollado por la compañía Netscape en 1994 con el propósito de mejorar la seguridad en las conexiones web de Internet.
+Se compone de:
+Certificados digitales X.509 v3 para la autenticación,
+Sistema de cifrado simétrico con llaves generadas por Diffie-Hellman,
+MAC para integridad de mensajes.
+
+Fases de una conexión SSL/TLS:
+1.- El cliente envía la versión de SSL, los parámetros de cifrado y data aleatoria para la comunicación.
+2.- El servidor envía la versión SSL definitiva, los parámetros de cifrado.
+3.- El servidor envía su certificado digital y su llave publica
+4.- Cierre de la comunicación por parte del servidor
+5.- El cliente envía su llave publica y su certificado digital (si aplica)
+6.- Generación de llaves y envío al servidor de la llave de sesión
+7.- Cierre de la comunicación de parte del cliente
+8.- El servidor envía un mensaje cifrado para validación del protocolo
+9.- Cierre del protocolo por parte del servidor e inicio de la transmisión de datos
+
+TLS:
+La versión utilizada actualmente es TLS 1.2, definida en el RFC 5246 de 2008.
+Sus principales características son:
+Certificados digitales X.509 v3 con extensión PHCS 7,
+Algoritmo de cifrado RSA,
+Diffie – Hellman para intercambio de llaves,
+Algoritmo de hashing SHA-2,
+HMAC como mecanismo de integridad y autenticación ,
+En marzo de 2011, fue descontinuado el uso de SSL 2.0.
+
+Operación de PKI:
+Este modelo esta basado en el uso de “Certificados Digitales” cuyo principal objetivo es validar la identidad de usuarios.
+El certificado digital es un archivo que contiene una serie de atributos del usuario y de la entidad emisora, denominada Autoridad Certificadora (CA).
+La CA es la responsable de registrar a todos los usuarios, mantener en sus repositorios los certificados digitales y validar su revocación.
+Este modelo puede operar tanto en redes internas, como en Internet.
+
+Operación del modelo PKI:
+1.- A pide su Certificado Digital a la CA
+2.- CA entrega el Certificado Digital a A, previa comprobación de su identidad
+3.- A entrega su Certificad Digital a B
+4.- B valida el Certificad Digital de A en la CA
+5.- CA valida el certificado consultado por B
+6.- B acepta la comunicación con A
+NOTA: uno de los atributos del Certificado Digital de A es su clave publica, por lo que B pude enviar mensajes cifrados
+
+Certificado Digital:
+Es un archivo con una serie de atributos que validan la identidad del usuario y del emisor.
+El formato utilizado en el modelo PKI es X.509 versión 3, cuyos principales atributos son:
+Versión,
+Numero de serie,
+Firma de la entidad emisora (CA),
+Nombre de usuario,
+Periodo de validez,
+Clave publica.
+
+Componentes de una PKI:
+Dentro del modelo completo de una PKI, definido en la RFC 2822, existen otros componentes que se detallan a continuación:
+CA: emisor de certificados digitales y quien administra la lista de revocación (CRL),
+Autoridad de registro (RA): es la encargada de validar la identidad de los usuarios que solicitan certificados digitales,
+Repositorio: lugar destinado a almacenar los certificados digitales emitidos.
+
+Secure Shell (SSH)
+Protocolo de conexión segura, que permite el acceso remoto a un servidor con intérprete de comandos como reemplazo al servicio telnet.
+Utiliza cifrado asimétrico para toda la comunicación, incluyendo las contraseñas.
+El intercambio de llaves de cifrado se realiza vía Diffie-Hellman y utiliza MAC para integridad.
+Servicio TCP que opera en el puerto 22.
+La mas reciente RFC es la 6668 de julio del 2012.
+Proyecto de uso libre: OpenSSH.
+
+Fases de una conexión SSH:
+Abertura de canal: el cliente envía una solicitud de conexión con su id y el mecanismo de autenticación, el servidor valida la identidad del usuario y valida la conexión.
+Transferencia de datos: se produce el intercambio de llaves, se cifra la conexión, el cliente envía la contraseña y se autentica la conexión, a continuación se procede con el envío de datos seguro.
+Cierre de la conexión: el cliente envía el cierre de la conexión, por consiguiente el servidor cierra el correspondiente socket.
+
+Esteganografía:
+Esta técnica permite ocultar un archivo o aplicación en una imagen fotográfica o de video.
+Al archivo utilizado para esta función se le denomina “portador”.
+Esta técnica hace casi imposible la detección de los mensajes, dado que el archivo “portador” se mantiene casi inalterado.
+La principal técnica usada es el “método de sustitución”, en la que se reemplazan los bits menos significativos.
+
+Esteganografía
+Una de las principales aplicaciones para realizar esta técnica es “Invisible Secrets” de East-Tec.
+
+Criptografia:
+PGP (Pretty Good Privacy):
+Mecanismo de cifrado que permite aplicar técnicas de criptografía para:
+Archivos, directorios
+Correos electrónicos
+Firma digital
+Utiliza PKI como principio de operación con algoritmo RSA
+Existe un proyecto de libre distribución OpenPGP
+http://www.openpgp.org/
+RFC 4880
+
+S/MIME:
+Técnica utilizada para cifrar y firmar correos electrónicos.
+Su sigla significa: Secure / Multipurpose Internet Mail Extensions
+Utiliza modelo PKI para su operación, con algoritmo RSA.
+RFC 3852
+Requiere que ambos clientes de correo soporten S/MIME.
+
+Preguntas:
+SSL como mecanismo de seguridad sirva para:
+Respuesta: Autenticar al servidor destino.
+
+Para realizar con éxito una sesión SSL es necesario que:
+Respuesta: Que el servidor disponga de un certificado digital.
+
+¿Cuál de los siguientes elementos es posible cifrar con PGP?
+Respuesta: Correo Electronico, Archivos.

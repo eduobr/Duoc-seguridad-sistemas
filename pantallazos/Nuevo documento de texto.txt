@@ -1,0 +1,27 @@
+Instalación de un certificado digital para SSL
+
+Habilitar servicios ssl
+
+habilita modulo ssl para apache
+a2nmod ssl 
+
+habilita sitio seguro
+a2ensite default-ssl 
+
+Reinicie el servicio web de apache con el siguiente comando:
+service apache2 restart
+
+Genere la llave privada del certificado digital con el siguiente comando:
+openssl genrsa –out private.key 2048
+
+Realice la solicitud del certificado digital (CSR) con el siguiente comando:
+openssl req -new -key private.key -out server.csr
+
+Genere el certificado digital firmado con la llave privada con el siguiente comando:
+openssl x509 -req -days 365 -in server.csr -signkey private.key -out certificado.pem
+
+A continuación modifique el archivo de configuración para que el servidor pueda acceder a la llave privada y certificado digital, con el siguiente comando:
+nano /etc/apache2/sites-available/default-ssl
+
+Reinicie el servicio apache nuevamente con el comando:
+service apache2 restart

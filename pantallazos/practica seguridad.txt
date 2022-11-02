@@ -1,0 +1,40 @@
+Generamos la llave de cifrado
+openssl genrsa -des3 -out server.key 1024 
+
+more server.key
+
+openssl genrsa -des3 -out server.key 2028
+
+le asignamos un dgst al archivo
+openssl dgst-md5 "nombrearchivo" 
+openssl dgst-sha1 nombrearchivo
+
+Firma digital
+openssl dgst-sha1 -sign server.key -out signed.sha1 ejemplo.txt
+more signed.sha1
+
+llave publica de la firma digital
+openssl rsa -in server.key -pubout > public.key
+
+validamos la firma digital
+openssl dgst-sha1-verify public.key -signature signed.sha1 ejemplo.txt
+
+Cifrado simetrico
+openssl enc -aes-256-cbc -salt -in archivo_A_cifrar -out archivoCifrado.enc
+
+Descrifrado
+openssl enc -d-aes-256-cbc -in archivo_cifrado.enc
+
+velocidad del algoritmo
+openssl speed algoritmo(des,3des,aes-128)
+
+Cifrado asimetrico
+Generamos llave privada
+openssl genrsa -out private.key 2048
+
+Generamos llave prublica
+openssl rsa -in private.key -pubout -out public.key
+
+openssl rsautl-encrypt-inkey publica.key -pubin -in nombreArchivo -out nombreArchivoCifrado
+
+openssl rsautl-decrypt-inkey privada.key -in nombreArchivoCifrado -out nombreSalida

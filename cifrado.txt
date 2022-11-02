@@ -1,0 +1,97 @@
+Definición:
+Técnica que permite resguardar los principios de la Seguridad de la información en los datos, a través de algoritmos matemáticos. Estos principios son:
+Confidencialidad	Cifrado,
+Autenticación	 Firma Digital,
+Integridad	Función HASH,
+No repudio	Firma Digital.
+
+Cifrado:
+Sistema matemático que altera los datos, con el objeto de ocultar u ofuscar la información para protegerla de un tercero NO autorizado.
+Resguarda el principio de la Confidencialidad.
+Simétrico:
+Utiliza la misma llave para cifrar que para descifrar.
+Asimétrico:
+Utiliza una llave para cifrar y otra distinta para descifrar.
+Cifrado Simetrico:
+También se conoce como cifrado de clave secreta.
+Cifrado Asimetrico:
+También se conoce como cifrado de clave pública.
+
+Algoritmos de cifrado:
+Los principales atributos que debe tener un algoritmo de cifrado, por el cual se basa su efectividad y uso son:
+Complejidad: este atributo permite determinar que tan difícil será descifrar un dato.
+Largo de llave: es un indicador del nivel de seguridad del algoritmo, entre más larga la llave, más seguro.
+Eficiencia: es la cantidad de data que puede cifrar por unidad de tiempo, este atributo es especialmente importante en envíos masivos de información.
+
+Criptografia:
+Algoritmos de cifrado simétrico:
+Algunos de algoritmos de cifrado simétrico utilizados en la actualidad son:
+DES: llave de 56 bits,
+3DES: llave de 168 bits,
+RC5: llave de 128 bits,
+AES: llave de 128, 192 o 256 bits,
+Blowfish: llave de 32 a 448 bits,
+IDEA: llave de 128 bits.
+
+Seguridad en el cifrado: en función del largo de la llave los algoritmos de cifrado simétrico son más difíciles de descifrar, para ello presentamos la siguiente tabla que muestra 
+los tiempos involucrados en función de la capacidad computacional.
+
+Ataques a los sistemas de cifrado:
+Ataques pasivos:
+Son aquellos que no alteran la data, capturan parte del trafico cifrado e intentan descifrarlo con técnicas de fuerza bruta o análisis inverso.
+Ataques activos:
+Son aquellos que involucran modificación de la data cifrada, reemplazando el mensaje hacia el usuario final, esto puede ser:
+Suplantación de identidad,
+Modificación de mensajes,
+Denegación de servicio.
+Permiten obtener la llave de cifrado bajo diferentes escenarios, utilizando herramientas de Criptoanálisis, dependiendo el tipo de ataque se requiere distinto tipo de información.
+
+Algoritmo Diffie – Hellman
+Desarrollado por Whitfield Diffie y Martin Hellman en 1976.
+Es un mecanismo de intercambio de llaves seguro, que utiliza la criptografía asimétrica para crear una llave de cifrado simétrica.
+Basado en la operación matemática de números primos, permite generar dos llaves iguales, sólo intercambiando las llaves públicas de los usuarios participantes en la comunicación cifrada.
+
+Funciones unidireccionales HASH (One way):
+Función matemática que produce un resultado único de largo fijo que además es irreversible.
+Están basadas en la operación “módulo” o “residuo”.
+También se les conoce como funciones “sensibles”, pues un pequeño cambio en la data de entrada, produce un cambio importante el resultado, también conocido como “digest”
+Las funciones hash son utilizadas, principalmente, para validar la integridad de un mensaje.
+La situación en que dos datos distintos, produzcan un mismo resultado, se denomina “colisión”.
+Principales algoritmos de funciones HASH:
+
+Las funciones de HASH más utilizadas en la actualidad son:
+MD5: digest de 128 bits
+SHA: digest de 160 bits
+
+Firma digital
+Consiste en un “digest” de un mensaje, cifrado con la llave privada del usuario, este mecanismo tiene por objetivo validar la identidad del emisor del mensaje.
+Además valida la integridad al utilizar la función hash
+Hoy en día tiene múltiples aplicaciones, tales como:
+Validación de autoría de documentos,
+Trámites legales,
+Validación de emisor de correo electrónico.
+Una de sus propiedades más importantes es el “no repudio” dado que esta cifrada con la clave privada del usuario, sólo éste pudo realizar la firma digital,
+
+Pasos para validar una firma digital:
+1.- Se obtiene el “digest” del mensaje
+2.- El “digest” es cifrado con la clave privada del usuario que envía el mensaje.
+3.- El mensaje viaja junto al “digest” cifrado (firma digital).
+4.- El receptor descifra la “firma digital” con la clave pública del usuario.
+5.- Compara el “digest” obtenido con el enviado, si son iguales valida la firma.
+
+Principales beneficios del uso de la criptografía
+Autenticación: permite validar al usuario que se esta conectando y al dispositivo remoto.
+Confidencialidad: todo el trafico va cifrado por lo que es altamente improbable que un usuario no autorizado acceda a la información.
+No repudio: al firmar un mensaje con la llave privada, se garantiza que solo el usuario dueño de la firma haya ejecutado la acción.
+Integridad: las funciones hash permiten garantizar que la data no ha sido modificada en el transito.
+
+Preguntas:
+
+En Criptografía pública es verdadero que:
+Respuesta: Se cifra con llave pública y se descifra con llave privada.
+
+¿Cuál es el principal inconveniente del algoritmo de cifrado AES-256?
+Respuesta:Al ser un algoritmo simétrico, requiere que la llave sea enviada por un mecanismo seguro.
+
+Las aplicaciones criptográficas que resguardan el principio de la Integridad de la información son:
+Respuesta: firma digital, función hash.
